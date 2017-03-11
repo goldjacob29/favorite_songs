@@ -17,7 +17,7 @@
       <% @song_instances.each do |song_instance| %>
       <tr>
         <td><%= song_instance.song.name %></td>
-        <td><%= song_instance.playlist_id %></td>
+        <td><%= song_instance.playlist.name %></td>
         <td>
           <a href="/song_instances/<%= song_instance.id %>" class="btn btn-primary">Show</a>
           <a href="/song_instances/<%= song_instance.id %>/edit" class="btn btn-warning">Edit</a>

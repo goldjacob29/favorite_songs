@@ -9,7 +9,13 @@
       <dd><%= @playlist.name %></dd>
 
       <dt>User</dt>
-      <dd><%= @playlist.user_id %></dd>
+      <dd>
+        <% if @playlist.user.present? %>
+          <a href="/users/<%= @playlist.user_id %>">
+            <%= @playlist.user.username %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Description</dt>
       <dd><%= @playlist.description %></dd>

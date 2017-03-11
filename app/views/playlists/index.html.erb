@@ -19,7 +19,13 @@
       <% @playlists.each do |playlist| %>
       <tr>
         <td><%= playlist.name %></td>
-        <td><%= playlist.user.username %></td>
+        <td>
+          <% if playlist.user.present? %>
+            <a href="/users/<%= playlist.user.id %>">
+              <%= playlist.user.username %>
+            </a>
+          <% end %>
+        </td>
         <td><%= playlist.description %></td>
         <td><%= playlist.share %></td>
         <td>

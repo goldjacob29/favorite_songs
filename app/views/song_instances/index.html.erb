@@ -16,8 +16,20 @@
 
       <% @song_instances.each do |song_instance| %>
       <tr>
-        <td><%= song_instance.song.name %></td>
-        <td><%= song_instance.playlist.name %></td>
+        <td>
+          <% if song_instance.song.present? %>
+            <a href="/songs/<%= song_instance.song.id %>">
+              <%= song_instance.song.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if song_instance.playlist.present? %>
+            <a href="/playlists/<%= song_instance.playlist.id %>">
+              <%= song_instance.playlist.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/song_instances/<%= song_instance.id %>" class="btn btn-primary">Show</a>
           <a href="/song_instances/<%= song_instance.id %>/edit" class="btn btn-warning">Edit</a>

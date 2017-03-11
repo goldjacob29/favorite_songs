@@ -5,4 +5,6 @@ class FriendRequest < ApplicationRecord
 
   # Validations
 
+  validates :sender_id, :uniqueness => { :scope => [:recipient_id] }
+
 end

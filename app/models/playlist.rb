@@ -5,4 +5,6 @@ class Playlist < ApplicationRecord
 
   # Validations
 
+  validates :share, :presence => true
+
 end

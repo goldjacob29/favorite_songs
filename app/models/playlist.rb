@@ -1,6 +1,9 @@
 class Playlist < ApplicationRecord
   # Direct associations
 
+  has_many   :song_instances,
+             :dependent => :destroy
+
   belongs_to :user,
              :counter_cache => true
 

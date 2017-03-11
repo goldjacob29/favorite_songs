@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :playlists,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

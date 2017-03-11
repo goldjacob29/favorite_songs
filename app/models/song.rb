@@ -5,6 +5,8 @@ class Song < ApplicationRecord
 
   # Validations
 
+  validates :genre, :presence => true
+
   validates :name, :presence => true
 
   validates :year, :presence => true

@@ -62,6 +62,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_song_instance" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for song_id -->
+      <div class="form-group">
+        <label for="song_id" class="control-label">
+          Song
+        </label>
+
+        <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for playlist_id -->
+      <input type="hidden" name="playlist_id" value="<%= @playlist.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Song Instance
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

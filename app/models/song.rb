@@ -5,4 +5,6 @@ class Song < ApplicationRecord
 
   # Validations
 
+  validates :year, :presence => true
+
 end
